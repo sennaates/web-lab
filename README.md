@@ -31,3 +31,7 @@ Tarayıcıda http://localhost:5173 adresini aç.
 
 <img width="818" height="421" alt="Ekran Resmi 2026-02-24 22 45 32" src="https://github.com/user-attachments/assets/80e26ba7-dda6-44f1-958f-1fb94dd22160" />
 
+<img width="1790" height="1049" alt="Ekran Resmi 2026-02-25 00 07 52" src="https://github.com/user-attachments/assets/c4918b1d-ab0e-4c4c-83f7-89612e0b151a" />
+
+<img width="555" height="590" alt="foto3" src="https://github.com/user-attachments/assets/7a715057-ce50-41e7-b005-0c7c0a9dfaa6" />
+
