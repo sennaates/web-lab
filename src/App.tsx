@@ -10,8 +10,12 @@ function App() {
     <div>
       <h1 >Web Tasarimi ve Programlama </h1 >
       <h2 >LAB -1 </h2 >
-      <p>Ad Soyad : [ Kendi Adin ]</p>
-      <p> Ogrenci No: [ Numaran ]</p>
+      <p> Ad Soyad : Sena Ateş</p>
+      <p> Ogrenci No: 235542010</p>
+      <p> Hobilerim : Resim çizmek, günlük tutmak</p>
+      <p> Okulum : Fırat Üniversitesi </p>
+      <p> Bölümüm : Yazılım Mühendisliği </p>
+
     </div >
   )
 }
