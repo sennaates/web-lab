@@ -29,8 +29,8 @@ function App() {
           <h2>Hakkimda</h2>
           <figure>
             <img
-              src="https://via.placeholder.com/150"
-              alt="Sena'nın çalışma masasında çekilmiş vesikalik fotografi"
+              src="/profil.jpg" alt="Sena'nın profil fotoğrafı"
+
             />
             <figcaption>Sena - Junior Web Developer</figcaption>
           </figure>
@@ -60,8 +60,8 @@ function App() {
             <p>Git komutları ve terminal kullanımı üzerine bir çalışma.</p>
             <p><strong>Teknolojiler:</strong> Git, Bash</p>
             <img
-              src="https://via.placeholder.com/300x150"
-              alt="Git log komutunun terminaldeki ekran görüntüsü"
+              src="/foto2.jpg" alt="Git Komutları"
+
             />
           </article>
 
@@ -70,7 +70,7 @@ function App() {
             <p>Semantik etiketler ve ARIA öznitelikleri kullanılarak geliştirildi.</p>
             <p><strong>Teknolojiler:</strong> React, Semantik HTML</p>
             <img
-              src="https://via.placeholder.com/300x150"
+              src="/foto3.jpg"
               alt="Erişilebilirlik testi puanlarının gösterildiği Lighthouse raporu"
             />
           </article>
@@ -144,8 +144,8 @@ function App() {
       <footer>
         <p>&copy; 2025 Sena. Tum haklari saklidir.</p>
         <div className="social-links">
-          <a href="https://github.com/senanin-adresi">GitHub</a> |
-          <a href="https://linkedin.com/in/senanin-adresi"> LinkedIn</a>
+          <a href="https://github.com/senaates">GitHub</a> |
+          <a href="https://linkedin.com/in/senaates"> LinkedIn</a>
         </div>
       </footer>
     </>
