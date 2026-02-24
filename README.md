@@ -27,3 +27,7 @@ npm run dev
 ```
 
 Tarayıcıda http://localhost:5173 adresini aç.
+
+
+<img width="818" height="421" alt="Ekran Resmi 2026-02-24 22 45 32" src="https://github.com/user-attachments/assets/80e26ba7-dda6-44f1-958f-1fb94dd22160" />
+<img width="818" height="421" alt="Ekran Resmi 2026-02-24 22 45 32" src="https://github.com/user-attachments/assets/80e26ba7-dda6-44f1-958f-1fb94dd22160" />
