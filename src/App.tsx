@@ -15,6 +15,9 @@ function App() {
       <p> Hobilerim : Resim çizmek, günlük tutmak</p>
       <p> Okulum : Fırat Üniversitesi </p>
       <p> Bölümüm : Yazılım Mühendisliği </p>
+      <p> Sınıfım : 3 </p>
+
+
 
     </div >
   )
