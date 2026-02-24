@@ -17,3 +17,9 @@ Semantik HTML & CSS
 Kurulum
 
 npm install
+
+## Çalıştırma
+
+npm run dev
+
+Tarayıcıda http://localhost:5173 adresini aç.
