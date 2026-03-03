@@ -1,7 +1,6 @@
-/* 1. TASARIM DEGISKENLERINI ICE AKTARMA */
 @import "./styles/tokens.css";
 
-/* 2. GENEL SIFIRLAMA (GLOBAL RESET) */
+/* --- GENEL SIFIRLAMA --- */
 *,
 *::before,
 *::after {
@@ -10,66 +9,104 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* 3. GOVDE VE AKICI TIPOGRAFI (UYGULAMA-2) */
 body {
   font-family: var(--font-sans);
   font-size: var(--text-base);
-  /* */
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
 }
 
-/* 4. RESPONSIVE GORSEL AYARI */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+/* --- UYGULAMA-6: PROJE GRID VE KARTLARI --- */
 
-/* 5. BASLIK STILLERI (FLUID TYPOGRAPHY) */
-h1 {
-  font-size: var(--text-3xl);
+.project-grid {
+  display: grid;
   /* */
-  color: var(--color-primary);
-  margin-bottom: var(--space-md);
-}
-
-h2 {
-  font-size: var(--text-2xl);
+  /* Sihirli Satir: Otomatik responsive grid! */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   /* */
-  color: var(--color-primary);
-  margin-bottom: var(--space-lg);
-  text-align: center;
-}
-
-h3 {
-  font-size: var(--text-xl);
+  gap: var(--space-xl);
   /* */
-  margin-bottom: var(--space-sm);
+  padding: var(--space-md) 0;
 }
 
-/* 6. UYGULAMA-4: RESPONSIVE HEADER VE NAVIGASYON */
+.project-card {
+  display: flex;
+  /* */
+  flex-direction: column;
+  /* */
+  background: var(--color-surface);
+  /* */
+  border: 1px solid var(--color-border);
+  /* */
+  border-radius: var(--radius-md);
+  /* */
+  overflow: hidden;
+  /* */
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  /* */
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  /* */
+  box-shadow: var(--shadow-lg);
+  /* */
+}
+
+/* Kart icindeki gorsel */
+.project-card img {
+  width: 100%;
+  /* */
+  height: 200px;
+  /* */
+  object-fit: cover;
+  /* */
+}
+
+/* Kart icerigi hizalama */
+.project-card h3,
+.project-card p,
+.project-card .skill-tags {
+  padding: 0 var(--space-lg);
+  /* */
+}
+
+.project-card h3 {
+  margin-top: var(--space-md);
+  /* */
+  font-size: var(--text-lg);
+  /* */
+}
+
+.project-card p {
+  color: var(--color-muted);
+  /* */
+  flex-grow: 1;
+  /* Icerik uzun olsa da kartlarin alt kenari hizali kalir */
+}
+
+.project-card .skill-tags {
+  padding-bottom: var(--space-lg);
+  /* */
+  margin-top: auto;
+  /* */
+}
+
+/* --- HEADER VE DIGER STILLER (ONCEKI ADIMLARDAN) --- */
 header {
   display: flex;
   flex-wrap: wrap;
-  /* */
   justify-content: space-between;
   align-items: center;
   padding: var(--space-md) var(--space-lg);
   background-color: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   position: sticky;
-  /* */
   top: 0;
   z-index: 10;
 }
 
-/* Logo / Site adi */
 .site-title {
   font-size: var(--text-xl);
   font-weight: 700;
@@ -77,32 +114,30 @@ header {
   text-decoration: none;
 }
 
-/* Navigasyon Listesi */
 nav ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   gap: var(--space-sm);
-  padding: 0;
-  margin: 0;
 }
 
 nav a {
-  display: inline-block;
-  padding: var(--space-xs) var(--space-md);
-  color: var(--color-text);
   text-decoration: none;
+  color: var(--color-text);
+  padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-md);
-  transition: background var(--transition-fast), color var(--transition-fast);
+  transition: background var(--transition-fast);
 }
 
-nav a:hover,
-nav a:focus {
+nav a:hover {
   background-color: var(--color-primary);
   color: var(--color-bg);
 }
 
-/* 7. MOBILDE DIKEY YIGIN (639px ve alti) */
+section {
+  padding: var(--space-xl) var(--space-md);
+}
+
 @media (max-width: 639px) {
   header {
     flex-direction: column;
@@ -114,66 +149,4 @@ nav a:focus {
     align-items: center;
     width: 100%;
   }
-
-  nav a {
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
-}
-
-/* 8. SECTION VE KART YAPISI */
-section {
-  padding: var(--space-xl) var(--space-md);
-}
-
-.card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition-normal);
-}
-
-.card:hover {
-  box-shadow: var(--shadow-md);
-}
-
-
-/* ===== UYGULAMA-5: TOOLBAR (BECERI ETIKETLERI) ===== */
-
-.skill-tags {
-  display: flex;
-  /* Etiketleri yan yana dizer */
-  flex-wrap: wrap;
-  /* Satira sigmayanlari alt satira atar */
-  gap: var(--space-sm);
-  /* Etiketler arasina bosluk ekler */
-  list-style: none;
-  /* Liste noktalarini kaldirir */
-  padding: 0;
-  /* Varsayilan boslugu sifirlar */
-  margin-top: var(--space-md);
-}
-
-.skill-tags li {
-  background-color: var(--color-primary);
-  /* Ana renk arka plan */
-  color: var(--color-bg);
-  /* Arka plan üzerinde beyaz metin */
-  padding: var(--space-xs) var(--space-md);
-  /* Ic bosluk (etiket formu) */
-  border-radius: var(--radius-full);
-  /* Tam yuvarlak koseler (Pill style) */
-  font-size: var(--text-sm);
-  /* Akici kucuk yazi boyutu */
-  font-weight: 500;
-  transition: transform var(--transition-fast);
-  cursor: default;
-}
-
-.skill-tags li:hover {
-  transform: translateY(-2px);
-  /* Üzerine gelince hafif yükselme efekti */
 }
