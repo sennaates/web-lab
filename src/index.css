@@ -65,3 +65,62 @@ section {
 .card:hover {
   box-shadow: var(--shadow-md);
 }
+
+/* --- Uygulama-3: Flex ile Navigasyon Cubugu --- */
+
+/* 1. Navigasyon Listesi Ayarları */
+nav ul {
+  display: flex;
+  /* Menü elemanlarını yan yana dizer */
+  list-style: none;
+  /* Noktaları kaldırır */
+  gap: var(--space-md);
+  /* Elemanlar arasına boşluk ekler */
+  padding: 0;
+  margin: 0;
+}
+
+/* 2. Header Hizalaması: Logo Sol, Nav Sağ */
+header {
+  display: flex;
+  /* Header'ı esnek yapıya çevirir */
+  justify-content: space-between;
+  /* Logoyu en sola, menüyü en sağa iter */
+  align-items: center;
+  /* Dikeyde ortalar */
+  padding: var(--space-md) var(--space-xl);
+  /* İç boşluk ekler */
+  background-color: var(--color-surface);
+  /* Hafif bir arka plan rengi */
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* 3. Mobil Uyumluluk: 639px ve altı ekranlar */
+@media (max-width: 639px) {
+  header {
+    flex-direction: column;
+    /* Mobilde logo ve menü üst üste biner */
+    gap: var(--space-md);
+  }
+
+  nav ul {
+    flex-direction: column;
+    /* Menü elemanları dikey yığın olur */
+    align-items: center;
+    /* Ortaya hizalar */
+  }
+}
+
+/* Ekstra: Link Stilleri (Föyde bahsi geçen temiz görünüm için) */
+nav a {
+  text-decoration: none;
+  /* Alt çizgiyi kaldırır */
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color var(--transition-normal);
+}
+
+nav a:hover {
+  color: var(--color-primary);
+  /* Üzerine gelince renk değiştirir */
+}
