@@ -1,45 +1,35 @@
-/* Önce değişkenlerin olduğu dosyayı içe aktarıyoruz */
-@import './styles/tokens.css';
+@import "./src/styles/tokens.css";
 
-/* 1. Genel Sıfırlama ve Temel Ayarlar */
+/* 1. Genel Sifirlama */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* [cite: 890-893] */
 }
 
 html {
   scroll-behavior: smooth;
-  /* [cite: 899] */
 }
 
+/* 2. Govde Stilleri */
 body {
   font-family: var(--font-sans);
-  /* [cite: 906] */
   font-size: var(--text-base);
-  /* [cite: 908] */
   line-height: 1.6;
-  /* [cite: 910] */
   color: var(--color-text);
-  /* [cite: 912] */
   background-color: var(--color-bg);
-  /* [cite: 914] */
 }
 
-/* 2. Responsive Görsel Ayarı */
+/* 3. Responsive Gorsel Ayari */
 img {
   max-width: 100%;
-  /* [cite: 921] */
   height: auto;
-  /* [cite: 923] */
   display: block;
-  /* [cite: 925] */
 }
 
-/* 3. Başlık Stilleri (Fluid Typography Kullanımı) */
+/* 4. Baslik Stilleri (Fluid Typography) */
 h1 {
   font-size: var(--text-3xl);
   color: var(--color-primary);
@@ -48,12 +38,9 @@ h1 {
 
 h2 {
   font-size: var(--text-2xl);
-  /* [cite: 942] */
   color: var(--color-primary);
   margin-bottom: var(--space-lg);
-  /* [cite: 947] */
   text-align: center;
-  /* [cite: 948] */
 }
 
 h3 {
@@ -61,29 +48,20 @@ h3 {
   margin-bottom: var(--space-sm);
 }
 
-/* 4. Sayfa Bölümleri (Sections) */
+/* 5. Section ve Kart Yapisi */
 section {
   padding: var(--space-xl) var(--space-md);
-  /* [cite: 932] */
 }
 
-/* 5. Kart Yapısı Örneği (İleride projeler için kullanacağız) */
 .card {
   background: var(--color-surface);
-  /* [cite: 267] */
   border: 1px solid var(--color-border);
-  /* [cite: 268] */
   border-radius: var(--radius-md);
-  /* [cite: 269] */
   padding: var(--space-lg);
-  /* [cite: 270] */
   box-shadow: var(--shadow-sm);
-  /* [cite: 273] */
   transition: box-shadow var(--transition-normal);
-  /* [cite: 276] */
 }
 
 .card:hover {
   box-shadow: var(--shadow-md);
-  /* [cite: 282] */
 }
