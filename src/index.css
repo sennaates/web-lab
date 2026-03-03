@@ -1,6 +1,7 @@
-@import "./src/styles/tokens.css";
+/* 1. TASARIM DEGISKENLERINI ICE AKTARMA */
+@import "./styles/tokens.css";
 
-/* 1. Genel Sifirlama */
+/* 2. GENEL SIFIRLAMA (GLOBAL RESET) */
 *,
 *::before,
 *::after {
@@ -13,31 +14,34 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 2. Govde Stilleri */
+/* 3. GOVDE VE AKICI TIPOGRAFI (UYGULAMA-2) */
 body {
   font-family: var(--font-sans);
   font-size: var(--text-base);
+  /* */
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
 }
 
-/* 3. Responsive Gorsel Ayari */
+/* 4. RESPONSIVE GORSEL AYARI */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* 4. Baslik Stilleri (Fluid Typography) */
+/* 5. BASLIK STILLERI (FLUID TYPOGRAPHY) */
 h1 {
   font-size: var(--text-3xl);
+  /* */
   color: var(--color-primary);
   margin-bottom: var(--space-md);
 }
 
 h2 {
   font-size: var(--text-2xl);
+  /* */
   color: var(--color-primary);
   margin-bottom: var(--space-lg);
   text-align: center;
@@ -45,10 +49,80 @@ h2 {
 
 h3 {
   font-size: var(--text-xl);
+  /* */
   margin-bottom: var(--space-sm);
 }
 
-/* 5. Section ve Kart Yapisi */
+/* 6. UYGULAMA-4: RESPONSIVE HEADER VE NAVIGASYON */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  /* */
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  /* */
+  top: 0;
+  z-index: 10;
+}
+
+/* Logo / Site adi */
+.site-title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Navigasyon Listesi */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: var(--space-sm);
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* 7. MOBILDE DIKEY YIGIN (639px ve alti) */
+@media (max-width: 639px) {
+  header {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* 8. SECTION VE KART YAPISI */
 section {
   padding: var(--space-xl) var(--space-md);
 }
@@ -64,63 +138,4 @@ section {
 
 .card:hover {
   box-shadow: var(--shadow-md);
-}
-
-/* --- Uygulama-3: Flex ile Navigasyon Cubugu --- */
-
-/* 1. Navigasyon Listesi Ayarları */
-nav ul {
-  display: flex;
-  /* Menü elemanlarını yan yana dizer */
-  list-style: none;
-  /* Noktaları kaldırır */
-  gap: var(--space-md);
-  /* Elemanlar arasına boşluk ekler */
-  padding: 0;
-  margin: 0;
-}
-
-/* 2. Header Hizalaması: Logo Sol, Nav Sağ */
-header {
-  display: flex;
-  /* Header'ı esnek yapıya çevirir */
-  justify-content: space-between;
-  /* Logoyu en sola, menüyü en sağa iter */
-  align-items: center;
-  /* Dikeyde ortalar */
-  padding: var(--space-md) var(--space-xl);
-  /* İç boşluk ekler */
-  background-color: var(--color-surface);
-  /* Hafif bir arka plan rengi */
-  border-bottom: 1px solid var(--color-border);
-}
-
-/* 3. Mobil Uyumluluk: 639px ve altı ekranlar */
-@media (max-width: 639px) {
-  header {
-    flex-direction: column;
-    /* Mobilde logo ve menü üst üste biner */
-    gap: var(--space-md);
-  }
-
-  nav ul {
-    flex-direction: column;
-    /* Menü elemanları dikey yığın olur */
-    align-items: center;
-    /* Ortaya hizalar */
-  }
-}
-
-/* Ekstra: Link Stilleri (Föyde bahsi geçen temiz görünüm için) */
-nav a {
-  text-decoration: none;
-  /* Alt çizgiyi kaldırır */
-  color: var(--color-text);
-  font-weight: 500;
-  transition: color var(--transition-normal);
-}
-
-nav a:hover {
-  color: var(--color-primary);
-  /* Üzerine gelince renk değiştirir */
 }
