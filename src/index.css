@@ -1,68 +1,89 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Önce değişkenlerin olduğu dosyayı içe aktarıyoruz */
+@import './styles/tokens.css';
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 1. Genel Sıfırlama ve Temel Ayarlar */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* [cite: 890-893] */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  scroll-behavior: smooth;
+  /* [cite: 899] */
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: var(--font-sans);
+  /* [cite: 906] */
+  font-size: var(--text-base);
+  /* [cite: 908] */
+  line-height: 1.6;
+  /* [cite: 910] */
+  color: var(--color-text);
+  /* [cite: 912] */
+  background-color: var(--color-bg);
+  /* [cite: 914] */
 }
 
+/* 2. Responsive Görsel Ayarı */
+img {
+  max-width: 100%;
+  /* [cite: 921] */
+  height: auto;
+  /* [cite: 923] */
+  display: block;
+  /* [cite: 925] */
+}
+
+/* 3. Başlık Stilleri (Fluid Typography Kullanımı) */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: var(--text-3xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h2 {
+  font-size: var(--text-2xl);
+  /* [cite: 942] */
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+  /* [cite: 947] */
+  text-align: center;
+  /* [cite: 948] */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-sm);
+}
+
+/* 4. Sayfa Bölümleri (Sections) */
+section {
+  padding: var(--space-xl) var(--space-md);
+  /* [cite: 932] */
+}
+
+/* 5. Kart Yapısı Örneği (İleride projeler için kullanacağız) */
+.card {
+  background: var(--color-surface);
+  /* [cite: 267] */
+  border: 1px solid var(--color-border);
+  /* [cite: 268] */
+  border-radius: var(--radius-md);
+  /* [cite: 269] */
+  padding: var(--space-lg);
+  /* [cite: 270] */
+  box-shadow: var(--shadow-sm);
+  /* [cite: 273] */
+  transition: box-shadow var(--transition-normal);
+  /* [cite: 276] */
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  /* [cite: 282] */
 }
