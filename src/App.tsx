@@ -1,19 +1,16 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
 
 function App() {
   return (
     <>
-      {/* 1. Header ve Navigasyon */}
+      {/* 1. Header ve Navigasyon (Uygulama-4 Guncellemesi) */}
       <a href="#main-content" className="skip-link">
         Ana icerige atla
       </a>
 
       <header>
-        <h1>Sena'nın Portfolyosu</h1>
+        <a href="/" className="site-title">Sena'nın Portfolyosu</a>
         <nav aria-label="Ana navigasyon">
           <ul>
             <li><a href="#hakkimda">Hakkimda</a></li>
@@ -24,14 +21,11 @@ function App() {
       </header>
 
       <main id="main-content">
-        {/* 2. Hakkımda Bölümü */}
+        {/* 2. Hakkımda Bölümü (Uygulama-5 Skill Tags) */}
         <section id="hakkimda">
           <h2>Hakkimda</h2>
           <figure>
-            <img
-              src="/profil.jpg" alt="Sena'nın profil fotoğrafı"
-
-            />
+            <img src="/profil.jpg" alt="Sena'nın profil fotoğrafı" />
             <figcaption>Sena - Junior Web Developer</figcaption>
           </figure>
 
@@ -41,11 +35,14 @@ function App() {
           </p>
 
           <h3>Kullandigim Teknolojiler</h3>
-          <ul>
-            <li>HTML5 & CSS3</li>
-            <li>React.js</li>
-            <li>Git & GitHub</li>
+          {/* Föydeki Flex-wrap Toolbar Yapısı */}
+          <ul className="skill-tags" role="list" aria-label="Beceri etiketleri">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>React</li>
             <li>TypeScript</li>
+            <li>Git</li>
           </ul>
         </section>
 
@@ -54,31 +51,26 @@ function App() {
         {/* 3. Projelerim Bölümü */}
         <section id="projeler">
           <h2>Projelerim</h2>
+          <div className="projects-grid"> {/* Grid yapısı için hazırlık */}
+            <article className="card">
+              <h3>Web Lab 1 - Git Ortamı</h3>
+              <p>Git komutları ve terminal kullanımı üzerine bir çalışma.</p>
+              <p><strong>Teknolojiler:</strong> Git, Bash</p>
+              <img src="/foto2.jpg" alt="Git Komutları" />
+            </article>
 
-          <article>
-            <h3>Web Lab 1 - Git Ortamı</h3>
-            <p>Git komutları ve terminal kullanımı üzerine bir çalışma.</p>
-            <p><strong>Teknolojiler:</strong> Git, Bash</p>
-            <img
-              src="/foto2.jpg" alt="Git Komutları"
-
-            />
-          </article>
-
-          <article>
-            <h3>Web Lab 2 - Erişilebilir Portföy</h3>
-            <p>Semantik etiketler ve ARIA öznitelikleri kullanılarak geliştirildi.</p>
-            <p><strong>Teknolojiler:</strong> React, Semantik HTML</p>
-            <img
-              src="/foto3.jpg"
-              alt="Erişilebilirlik testi puanlarının gösterildiği Lighthouse raporu"
-            />
-          </article>
+            <article className="card">
+              <h3>Web Lab 2 - Erişilebilir Portföy</h3>
+              <p>Semantik etiketler ve ARIA öznitelikleri kullanılarak geliştirildi.</p>
+              <p><strong>Teknolojiler:</strong> React, Semantik HTML</p>
+              <img src="/foto3.jpg" alt="Lighthouse raporu" />
+            </article>
+          </div>
         </section>
 
         <hr />
 
-        {/* 4. İletişim Bölümü (Uygulama-4 Formu) */}
+        {/* 4. İletişim Bölümü */}
         <section id="iletisim">
           <h2>Iletisim</h2>
           <form action="#" method="POST" noValidate>
@@ -87,26 +79,13 @@ function App() {
 
               <div className="form-group">
                 <label htmlFor="name">Ad Soyad:</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  minLength={2}
-                  aria-describedby="name-error"
-                />
+                <input type="text" id="name" name="name" required minLength={2} aria-describedby="name-error" />
                 <small id="name-error" className="error-msg" role="alert"></small>
               </div>
 
               <div className="form-group">
                 <label htmlFor="email">E-posta:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  aria-describedby="email-error"
-                />
+                <input type="email" id="email" name="email" required aria-describedby="email-error" />
                 <small id="email-error" className="error-msg" role="alert"></small>
               </div>
 
@@ -123,14 +102,7 @@ function App() {
 
               <div className="form-group">
                 <label htmlFor="message">Mesajiniz:</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  minLength={10}
-                  aria-describedby="message-error"
-                ></textarea>
+                <textarea id="message" name="message" rows={5} required minLength={10} aria-describedby="message-error"></textarea>
                 <small id="message-error" className="error-msg" role="alert"></small>
               </div>
 
@@ -142,7 +114,7 @@ function App() {
 
       {/* 5. Footer */}
       <footer>
-        <p>&copy; 2025 Sena. Tum haklari saklidir.</p>
+        <p>&copy; 2026 Sena. Tum haklari saklidir.</p>
         <div className="social-links">
           <a href="https://github.com/senaates">GitHub</a> |
           <a href="https://linkedin.com/in/senaates"> LinkedIn</a>

@@ -139,3 +139,41 @@ section {
 .card:hover {
   box-shadow: var(--shadow-md);
 }
+
+
+/* ===== UYGULAMA-5: TOOLBAR (BECERI ETIKETLERI) ===== */
+
+.skill-tags {
+  display: flex;
+  /* Etiketleri yan yana dizer */
+  flex-wrap: wrap;
+  /* Satira sigmayanlari alt satira atar */
+  gap: var(--space-sm);
+  /* Etiketler arasina bosluk ekler */
+  list-style: none;
+  /* Liste noktalarini kaldirir */
+  padding: 0;
+  /* Varsayilan boslugu sifirlar */
+  margin-top: var(--space-md);
+}
+
+.skill-tags li {
+  background-color: var(--color-primary);
+  /* Ana renk arka plan */
+  color: var(--color-bg);
+  /* Arka plan üzerinde beyaz metin */
+  padding: var(--space-xs) var(--space-md);
+  /* Ic bosluk (etiket formu) */
+  border-radius: var(--radius-full);
+  /* Tam yuvarlak koseler (Pill style) */
+  font-size: var(--text-sm);
+  /* Akici kucuk yazi boyutu */
+  font-weight: 500;
+  transition: transform var(--transition-fast);
+  cursor: default;
+}
+
+.skill-tags li:hover {
+  transform: translateY(-2px);
+  /* Üzerine gelince hafif yükselme efekti */
+}
